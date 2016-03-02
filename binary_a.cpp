@@ -1,11 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
-// 학번 : 20041548
-// 이름 : 박정필
-// 분반 : E13
-// 문제 : Binary ( 십진수 -> 이진수)
-// 시간 : 
-// 참조 : http://blog.naver.com/itioma?Redirect=Log&logNo=40046289261 의 알고리즘과
-//        문제 4번의 출력방식을 이용하였습니다.
+// name : jppark
+// 참조 : http://blog.naver.com/itioma?Redirect=Log&logNo=40046289261
 //////////////////////////////////////////////////////////////////////////
 #include <iostream>
 using namespace std;
@@ -26,14 +21,14 @@ struct dec2bin
 		{
 			putchar((n&mask)== 0 ? '0':'1');
 			if( (i%8)== 0) 
-				putchar(' ');	// 보기 쉽도록 1바이트(8비트) 단위로 띄어쓰기
-			n<<=1;				// 왼쪽으로 1비트 shift
+				putchar(' ');
+			n<<=1;			
 		}
 		return out;
 	}
 };
 
-// 1 일때
+
 template<>
 struct dec2bin<1>
 {
@@ -43,7 +38,7 @@ struct dec2bin<1>
 	}
 };
 
-// 0 일때
+
 template<>
 struct dec2bin<0>
 {
@@ -53,7 +48,7 @@ struct dec2bin<0>
 	}
 };
 
-//출력
+
 template <unsigned long N>
 std::ostream & operator<< (std::ostream & out, const dec2bin<N> & desc )
 {
